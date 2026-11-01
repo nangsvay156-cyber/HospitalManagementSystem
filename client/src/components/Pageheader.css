@@ -1,0 +1,59 @@
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.page-header-text h1 {
+  margin: 0 0 4px 0;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', serif; /* matches the serif title in screenshot */
+  color: var(--ink, #1a1a1a);
+}
+
+.page-header-text p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft, #6b7280);
+}
+
+/* Primary action button (e.g. "Add Patient") */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--brand, #123a34);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover, #0d2b26);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Responsive: stack button under text on small screens */
+@media (max-width: 480px) {
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary {
+    justify-content: center;
+  }
+}

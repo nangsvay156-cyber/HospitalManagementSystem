@@ -1,0 +1,50 @@
+.vitals-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.vital-card {
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vital-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.vital-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.vital-alert .vital-value { color: var(--danger); }
+
+.pulse-line {
+  height: 2px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, var(--sage) 0%, var(--primary) 50%, var(--sage) 100%);
+  background-size: 200% 100%;
+  animation: pulse-scan 2.6s linear infinite;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.vital-alert .pulse-line {
+  background: linear-gradient(90deg, #E8B4AC 0%, var(--danger) 50%, #E8B4AC 100%);
+  background-size: 200% 100%;
+}
+
+@keyframes pulse-scan {
+  from { background-position: 200% 0; }
+  to { background-position: 0 0; }
+}
